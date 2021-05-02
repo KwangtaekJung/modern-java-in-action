@@ -1,2 +1,3 @@
 include 'ch3-lambda'
+include 'ch4-stream-intro'
 
