@@ -45,6 +45,7 @@ public class Application {
         List<Apple> result = new ArrayList<>();
         for(Apple apple : inventory) {
             if (p.test(apple)) {
+
                result.add(apple);
             }
         }
