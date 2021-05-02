@@ -3,4 +3,5 @@ rootProject.name = "modern-java-in-action"
 include 'ch2-behavior-parameterization'
 include 'ch3-lambda'
 include 'ch4-stream-intro'
+include 'part2'
 
