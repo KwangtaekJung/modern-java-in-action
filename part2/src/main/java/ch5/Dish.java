@@ -1,7 +1,11 @@
 package ch5;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static java.util.Arrays.asList;
 
 public class Dish {
     private final String name;
@@ -42,7 +46,7 @@ public class Dish {
         FISH,
         OTHER
     }
-    public static final List<Dish> menu = Arrays.asList(
+    public static final List<Dish> menu = asList(
             new Dish("pork", false, 800, Type.MEAT),
             new Dish("beef", false, 700, Type.MEAT),
             new Dish("chicken", false, 400, Type.MEAT),
@@ -53,4 +57,17 @@ public class Dish {
             new Dish("prawns", false, 400, Type.FISH),
             new Dish("salmon", false, 450, Type.FISH)
     );
+
+    public static final Map<String, List<String>> dishTags = new HashMap<>();
+    static {
+        dishTags.put("pork", asList("greasy", "salty"));
+        dishTags.put("beef", asList("salty", "roasted"));
+        dishTags.put("chicken", asList("fried", "crisp"));
+        dishTags.put("french fries", asList("greasy", "fried"));
+        dishTags.put("rice", asList("light", "natural"));
+        dishTags.put("season fruit", asList("fresh", "natural"));
+        dishTags.put("pizza", asList("tasty", "salty"));
+        dishTags.put("prawns", asList("tasty", "roasted"));
+        dishTags.put("salmon", asList("delicious", "fresh"));
+    }
 }
