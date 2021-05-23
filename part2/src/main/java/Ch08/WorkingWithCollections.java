@@ -26,9 +26,23 @@ public class WorkingWithCollections {
         Set<String> friendsByStream = Stream.of("Rahpael", "Olivia", "Thibaut").collect(Collectors.toSet());
 
         // 8.1.1 리스트 팩토리
-        // List.of: 고정 요소의 리스트 생성
+        // List.of: 고정 및 불변 요소의 리스트 생성
         List<String> friendsByListOf = List.of("Raphael", "Olivia", "Thibaut");
 //        friendsByListOf.add("Chih-Chun");  // UnsupportedOperationException
+
+        // 8.1.2 집합 팩토리
+        // Set.of
+        Set<String> friendsBySetOf = Set.of("Raphael", "Olivia", "Thibaut");
+
+        // 8.1.3 맵 팩토리
+        Map<String, Integer> ageOfFriends = Map.of("Raphael", 30, "Olivia", 25, "Thibaut", 26);
+        System.out.println(ageOfFriends);
+
+        Map<String, Integer> ageOfFriendsByOfEntries = Map.ofEntries(
+                Map.entry("Raphael", 30),
+                Map.entry("Olivia", 25),
+                Map.entry("Thibaut", 26));
+        System.out.println(ageOfFriendsByOfEntries);
 
         System.out.println("------ Working with Lists ------");
         System.out.println("--> Transforming list items with a Stream");
