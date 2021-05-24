@@ -44,6 +44,51 @@ public class WorkingWithCollections {
                 Map.entry("Thibaut", 26));
         System.out.println(ageOfFriendsByOfEntries);
 
+        // 8.3 맵 처리
+        // 8.3.1 forEach 메서드
+        for(Map.Entry<String, Integer> entry : ageOfFriends.entrySet()) {
+            String friend = entry.getKey();
+            Integer age = entry.getValue();
+            System.out.println(friend + " is " + age + " years old");
+        }
+
+        ageOfFriends.forEach((friend, age) -> System.out.println(friend + " is " + age + " years old"));
+
+        // 8.3.2 정렬 메서드
+        Map<String, String> favoriteMovies = Map.ofEntries(Map.entry("Raphael", "Stat Wars"),
+                Map.entry("Cristina", "Matrix"),
+                Map.entry("Olivia", "James Bond"));
+
+        favoriteMovies
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByKey())
+                .forEachOrdered(System.out::println);
+
+        // 8.3.3 getOrDefault Method
+        System.out.println(favoriteMovies.getOrDefault("Olivia", "Matrix2"));
+        System.out.println(favoriteMovies.getOrDefault("Thibaut", "Matrix2"));
+
+        // 8.3.4 계산 패턴
+        Map<String, List<String>> friendsToMovies = new HashMap<>();
+        String friend = "Raphael";
+        List<String> movies = friendsToMovies.get(friend);
+        if(movies == null) {
+            movies = new ArrayList<>();
+            friendsToMovies.put(friend, movies);
+        }
+        movies.add("Star Wars");
+        System.out.println(friendsToMovies);
+
+        friendsToMovies.computeIfAbsent("Thibaut", name -> new ArrayList<>())
+                .add("James Bond");
+        System.out.println(friendsToMovies);
+
+
+
+        // 8.3.5
+
+
         System.out.println("------ Working with Lists ------");
         System.out.println("--> Transforming list items with a Stream");
 
