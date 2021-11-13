@@ -84,11 +84,7 @@ public class WorkingWithCollections {
                 .add("James Bond");
         System.out.println(friendsToMovies);
 
-
-
         // 8.3.5
-
-
         System.out.println("------ Working with Lists ------");
         System.out.println("--> Transforming list items with a Stream");
 
