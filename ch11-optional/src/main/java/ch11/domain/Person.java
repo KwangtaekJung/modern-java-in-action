@@ -14,6 +14,7 @@ import java.util.Optional;
 public class Person {
 
     private Car car;
+    private int age;
 
     public Optional<Car> getCarOptional() {
         return  Optional.ofNullable(car);
