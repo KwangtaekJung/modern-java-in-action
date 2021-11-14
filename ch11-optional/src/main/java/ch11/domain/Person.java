@@ -19,4 +19,8 @@ public class Person {
     public Optional<Car> getCarOptional() {
         return  Optional.ofNullable(car);
     }
+
+    public Person(Car car) {
+        this.car = car;
+    }
 }
